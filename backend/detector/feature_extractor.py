@@ -2,7 +2,7 @@ import re
 from urllib.parse import urlparse
 
 import joblib
-import pandas as pd
+import pandas as pd # type: ignore
 from bs4 import BeautifulSoup
 from collections import Counter
 import requests

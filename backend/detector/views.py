@@ -25,8 +25,8 @@ def detect_phishing(request):
         probability_number = round(probabilities[0][result] * 100, 1)
         probability = f'{probability_number}%'
         classification = 'PHISHING' if result == 1 else 'LEGITIMATE'
-        result_message = 'Esse site tem chance considerável de ser ' + (
-            'phishing.' if result == 1 or round(probabilities[0][result] * 100, 1) > 40 else 'legítimo.')
+        result_message = 'There is a significant chance that this site exists ' + (
+            'PHISHING.' if result == 1 or round(probabilities[0][result] * 100, 1) > 40 else 'LEGITIMATE.')
 
         data = {'message': result_message, 'result': classification, 'probability': probability}
         return JsonResponse(data, status=200)
